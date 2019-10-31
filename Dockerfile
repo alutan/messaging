@@ -24,5 +24,6 @@ COPY ./messaging-ear/target/messaging-ear-1.0-SNAPSHOT.ear /config/apps/Messagin
 RUN chown -R 1001.0 /config /opt/ibm/wlp/usr/servers/defaultServer /opt/ibm/wlp/usr/shared/resources && chmod -R g+rw /config /opt/ibm/wlp/usr/servers/defaultServer  /opt/ibm/wlp/usr/shared/resources
 
 USER 1001
-RUN configure.sh
+
+RUN installUtility install --acceptLicense mdb-3.2 ejbLite-3.2 jndi-1.0 jsonb-1.0 jca-1.7 jms-2.0 mpRestClient-1.3 mpConfig-1.3 cdi-2.0 ssl-1.0 appSecurity-3.0 jwt-1.0
 
